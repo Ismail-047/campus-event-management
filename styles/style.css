@@ -191,6 +191,65 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: auto;
+}
+
+/* --- Add this to the bottom of styles/style.css --- */
+
+/* Event Card Styling */
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+}
+
+.event-date {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.event-date .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.event-date .month {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.event-details {
+    padding: 20px;
+    flex: 1;
+}
+
+.event-details h3 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.event-details p {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    color: #555;
 body {
      margin: 0;
      font-family: Arial, sans-serif;
