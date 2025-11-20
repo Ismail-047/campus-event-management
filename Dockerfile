@@ -1,14 +1,11 @@
-# build stage
-FROM node:18-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npx parcel build src/index.html --out-dir dist --public-url ./
-
-# production stage
+# Use official Nginx image
 FROM nginx:stable-alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-# optional: expose port 80
+
+# Copy all your HTML and CSS files into Nginx's default html folder
+COPY ./src /usr/share/nginx/html
+
+# Expose port 80
 EXPOSE 80
+
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
